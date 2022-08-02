@@ -14,6 +14,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     lateinit var toolbar:Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView:NavigationView
+    lateinit var textView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,14 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        textView = findViewById(R.id.txtuser12)
+        val bundle = intent.extras
+        if (bundle !=null)
+        {
+            textView.text = bundle.getString("user")
+        }
+
         when (item.itemId) {
             android.R.id.home -> {
                 drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
@@ -40,7 +49,11 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 return true
             }
         }
-        return super.onOptionsItemSelected(item)}
+
+
+        return super.onOptionsItemSelected(item)
+
+    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment: Fragment? = null
@@ -56,6 +69,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 fragment = Fragment3()
             }
         }
+
         if (fragment != null) {
             getSupportFragmentManager()
                 .beginTransaction()

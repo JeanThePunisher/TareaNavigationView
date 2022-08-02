@@ -10,9 +10,9 @@
         android:src="@drawable/navheader"
         android:scaleType="centerCrop" />
     <TextView
+        android:id="@+id/txtuser12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jean"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textStyle="bold"
         android:layout_gravity="bottom"
