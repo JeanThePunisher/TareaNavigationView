@@ -10,25 +10,25 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    lateinit var toolbar:Toolbar
+class MainActivity4 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
-    lateinit var navView:NavigationView
+    lateinit var navView: NavigationView
     lateinit var textView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main4)
 
-        toolbar = findViewById<Toolbar>(R.id.toolbar);
+        toolbar = findViewById<Toolbar>(R.id.toolbar1);
         toolbar!!.title="Usuarios UTEQ"
         setSupportActionBar(toolbar)
 
         getSupportActionBar()?.setHomeAsUpIndicator(R.drawable.iconmenu);
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
 
-        navView = findViewById(R.id.nav_view)
+        navView = findViewById(R.id.nav_view1)
         navView.setNavigationItemSelectedListener(this);
 
     }
@@ -44,7 +44,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         when (item.itemId) {
             android.R.id.home -> {
-                drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+                drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout1)
                 drawerLayout?.openDrawer(GravityCompat.START)
                 return true
             }
@@ -78,7 +78,7 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             item.setChecked(true)
             getSupportActionBar()?.setTitle(item.getTitle());
         }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout1)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
